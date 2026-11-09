@@ -43,13 +43,13 @@
   <p class="small muted" style="margin-bottom:0">✔ 코드를 외우거나 직접 작성할 필요는 없습니다. AI에게 요구사항을 정확하게 설명하고, 결과를 검토하는 것이 중요합니다.</p>
 </div></section>
 <section class="section" id="roles"><div class="section-title"><span class="step">01</span><h2>우리 모둠, 오늘은 어떤 팀?</h2></div><div class="card">
-  <div class="field"><label for="team">모둠 이름</label><input id="team" type="text" placeholder="예: 1모둠 (이름 대신 모둠 번호 권장)" maxlength="60"></div>
+  <div class="field"><label for="team">모둠 이름</label><input id="team" type="text" placeholder="모둠 이름을 작성해 주세요." maxlength="60"></div>
   <div class="roles">
     <div class="role"><strong>🧭 서비스 기획자</strong><p>원래 설계한 목적과 기능이 잘 반영됐는지 확인</p><input id="role-plan" aria-label="서비스 기획자 이름" placeholder="담당 역할 별칭 (선택)"></div>
     <div class="role"><strong>🎨 UX/UI 디자이너</strong><p>화면 구성과 사용 편의성을 확인</p><input id="role-design" aria-label="UX/UI 디자이너 이름" placeholder="담당 역할 별칭 (선택)"></div>
     <div class="role"><strong>💬 AI 구현 담당자</strong><p>프롬프트를 입력하고 AI 결과를 수정 요청</p><input id="role-ai" aria-label="AI 구현 담당자 이름" placeholder="담당 역할 별칭 (선택)"></div>
     <div class="role"><strong>🔎 품질 평가자</strong><p>직접 사용하며 오류와 개선점을 발견</p><input id="role-test" aria-label="품질 평가자 이름" placeholder="담당 역할 별칭 (선택)"></div>
-  </div><div class="hint">실명은 입력하지 말고 모둠 번호와 별칭을 사용하세요. 역할은 협력하기 위한 기준이에요. AI를 조작하는 사람 한 명만 활동하지 않도록 모둠원 모두 의견을 내 주세요.</div>
+  </div><div class="hint">역할은 협력하기 위한 기준이에요. AI를 조작하는 사람 한 명만 활동하지 않도록 모둠원 모두 의견을 내 주세요.</div>
 </div></section>
 <section class="section" id="plan"><div class="section-title"><span class="step">02</span><h2>우리 앱 기획 다시 확인하기</h2></div><div class="card">
   <p class="muted small" style="margin-top:0">지난 시간에 직접 작성한 <strong>기획서와 화면 설계도</strong>를 보며 우리 모둠의 내용을 자유롭게 적어 보세요. 정해진 답이나 기본 기능은 없어요.</p>
@@ -58,8 +58,8 @@
     <div class="field"><label for="audience">주요 사용자</label><input id="audience" placeholder="우리 앱을 주로 사용하는 사람은 누구일까요?"></div>
   </div>
   <div class="field"><label for="problem">이 앱으로 해결하고 싶은 문제</label><textarea id="problem" placeholder="우리 모둠이 해결하려는 문제를 적어 보세요."></textarea></div>
-  <div class="field"><label for="screens">필요한 화면 (기존 화면 설계 참고)</label><textarea id="screens" placeholder="우리 모둠이 설계한 화면을 적어 보세요."></textarea></div>
-  <div class="field"><label for="feature">오늘 반드시 구현하고 싶은 핵심 기능 한 가지</label><textarea id="feature" placeholder="핵심 기능 한 가지를 모둠이 정해 보세요."></textarea></div>
+  <div class="field"><label for="screens">필요한 화면 (기존 화면 설계 참고)</label><textarea id="screens" placeholder="우리 모둠이 설계한 화면을 적어 보세요. 여러 개라면 '화면 1'과 같은 형식으로 나누어 작성해 봅시다."></textarea></div>
+  <div class="field"><label for="feature">오늘 반드시 구현하고 싶은 핵심 기능 한 가지</label><textarea id="feature" placeholder="핵심 기능 한 가지를 모둠이 정해 보세요.(실현 가능한 것일수록 AI가 만들기 편해져요)"></textarea></div>
   <div class="mission"><div class="mission-title">✏️ 우리 모둠이 직접 정하는 제작 목표</div><p>지난 시간의 설계를 다시 살펴보고 이번에 구현할 핵심 기능을 직접 선택하세요.</p><p class="mission-note">모든 기능을 완성할 필요는 없어요. 실제 연결이 어려운 기능은 시뮬레이션으로 표현해도 됩니다.</p></div>
 </div></section>
 <section class="section" id="examples"><div class="section-title"><span class="step">참고</span><h2>작성 예시 모아 보기</h2></div><div class="card">
@@ -70,7 +70,7 @@
   <details class="example-details"><summary>🌱 진로 성찰 작성 예시</summary><div class="hint">“UX/UI 디자인 활동이 흥미로웠다. 처음에는 화면을 예쁘게 꾸미는 것만 생각했지만, 사용자가 이해하기 쉬운 버튼 위치와 글씨 크기를 고민하는 일이 중요하다는 것을 알았다.”</div></details>
 </div></section>
 <section class="section" id="prompt-section"><div class="section-title"><span class="step">03</span><h2>AI에게 우리 앱 제작 요청하기</h2></div><div class="card">
-  <p style="margin-top:0;font-size:14px">위에 작성한 내용을 바탕으로 <strong>우리 모둠만의 프롬프트</strong>가 자동 완성됩니다. 아래 문장을 복사해 AI에게 전달해 보세요. 기존에 그린 화면 설계도 사진을 함께 첨부하면 더 좋아요.</p>
+  <p style="margin-top:0;font-size:14px">위에 작성한 내용을 바탕으로 <strong>우리 모둠만의 프롬프트</strong>를 완성해 봅시다. 아래 문장을 복사해 AI에게 전달해 보세요. 기존에 그린 화면 설계도 사진을 함께 첨부하면 더 좋아요.</p>
   <div class="actions"><button class="btn" id="copy-prompt" type="button">📋 프롬프트 복사</button><span class="status" id="copy-status" role="status"></span></div>
   <div class="prompt" id="prompt-output" aria-label="자동 생성된 AI 요청문"></div>
   <div class="callout"><strong>💡 AI가 만든 코드를 어떻게 실행할까요?</strong><br>AI에게 <b>“완성된 코드를 index.html 파일 하나로 만들어 줘”</b>라고 요청하세요. 코드를 파일로 저장한 뒤 더블클릭하면 브라우저에서 열 수 있어요. 파일을 바로 제공하는 AI라면 HTML 파일을 내려받아 열어도 됩니다.</div>
@@ -92,10 +92,10 @@
 <section class="section" id="finish"><div class="section-title"><span class="step">FINISH</span><h2>오늘의 경험 돌아보기</h2></div><div class="card">
   <div class="field"><label for="favorite-role">내가 가장 흥미를 느낀 직무 또는 활동은?</label><select id="favorite-role"><option value="">선택해 주세요</option><option>서비스 기획 · 문제 해결</option><option>UX/UI 디자인 · 화면 구성</option><option>AI 활용 · 앱 구현</option><option>품질 평가 · 사용자 테스트</option><option>아직 잘 모르겠다</option></select></div>
   <div class="field"><label for="reflection">그렇게 생각한 이유 또는 오늘 새롭게 알게 된 점</label><textarea id="reflection" placeholder="예: 사용자가 어떤 버튼을 눌러야 할지 고민하면서 디자인이 단순히 예쁘게 만드는 일이 아니라는 것을 알았다."></textarea></div>
-  <div class="field"><label for="submission-code">제출 확인용 모둠 번호 (선택)</label><input id="submission-code" maxlength="30" placeholder="예: 1학년 3반 2모둠 — 실명은 적지 마세요"></div>
+  <div class="field"><label for="submission-code">(제출 확인용) 작성자 이름</label><input id="submission-code" maxlength="30" placeholder="예: 김무학"></div>
   <div class="actions"><button class="btn" id="submit-sheet" type="button">☁ 교사에게 결과 제출</button><span class="status" id="submit-status" role="status"></span></div>
   <div class="actions" style="margin-top:12px"><button class="btn" id="save-file" type="button">⬇ 활동 결과 저장 (.txt)</button><button class="btn secondary" id="print" type="button">🖨 인쇄 / PDF 저장</button><button class="btn light" id="reset" type="button">↺ 작성 내용 초기화</button></div>
-  <div class="hint">🔒 작성 내용은 현재 브라우저에 임시 저장됩니다. <strong>제출 버튼을 누르면</strong> 입력한 모둠 활동 내용이 교사가 관리하는 Google 스프레드시트로 전송될 수 있습니다(교사가 제출 주소를 설정한 경우). 실명·연락처·개인 상담 내용 등은 입력하지 마세요. 전송 후에는 교사의 시트에서 제출 여부를 확인해야 하며, TXT 파일도 따로 저장할 수 있습니다.</div>
+  <div class="hint">🔒 작성 내용은 현재 브라우저에 임시 저장됩니다. <strong>제출 버튼을 누르면</strong> 입력한 모둠 활동 내용이 교사가 관리하는 Google 스프레드시트로 전송됩니다. TXT 파일도 따로 저장할 수 있습니다.</div>
 </div></section>
 <div class="footer">AI 앱 제작 스튜디오 · 진로활동 학습지 · HTML 단일 파일 / GitHub Pages 사용 가능</div>
 </main>
