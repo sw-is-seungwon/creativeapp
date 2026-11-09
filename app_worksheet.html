@@ -107,7 +107,7 @@
   const fields=['submission-code','team','role-plan','role-design','role-ai','role-test','app-name','audience','problem','screens','feature','success','improve','favorite-role','reflection'];
   const checks=['check1','check2','check3','check4','check5'];
   // 아래 URL에 교사가 배포한 Apps Script 웹 앱 /exec 주소를 붙여 넣으세요.
-  const SUBMIT_URL = '';
+  const SUBMIT_URL = 'https://script.google.com/macros/s/AKfycbyFCtcqW4EeK0ow-Tf119FMYOsqbaf_apvmcsCIYQIab8q4RY3OrgoC2jago0ZoCyhzNA/exec';
   const value=id=>$(id).value.trim();
   function promptText(){
     const fallback=(id,def)=>value(id)||def;
