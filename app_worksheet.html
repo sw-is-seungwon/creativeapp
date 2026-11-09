@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7ff">
+  <meta name="description" content="고1 진로활동 | 우리 모둠의 앱 아이디어를 AI와 함께 시제품으로 만들어 보는 활동지">
+  <title>아이디어를 현실로! | AI 앱 제작 스튜디오</title>
+  <style>
+    :root{--ink:#26354d;--muted:#68778e;--line:#e5e9f2;--purple:#6658ca;--purple-light:#f0edff;--mint:#e6f8f2;--pink:#fff0f3;--blue:#edf5ff;--yellow:#fff7e6;--white:#fff;--shadow:0 8px 26px rgba(54,66,110,.065)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f9fd;color:var(--ink);font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.65;word-break:keep-all}
+    button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #ac9cff;outline-offset:2px}
+    .shell{max-width:1030px;margin:0 auto;padding:0 22px 76px}.top{background:linear-gradient(115deg,#eeeaff 0%,#eaf7ff 60%,#e7f9f1 100%);border-bottom:1px solid #e7e8f4}
+    .top .shell{padding-top:54px;padding-bottom:47px}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.03em;color:#594eae;background:#ffffffb8;border:1px solid #ffffffdb;padding:6px 13px;border-radius:50px}
+    h1{font-size:clamp(29px,5vw,47px);letter-spacing:-.055em;line-height:1.28;margin:19px 0 12px;font-weight:850}h1 em{font-style:normal;color:var(--purple)}.lead{color:#57677e;font-size:16px;max-width:680px;margin:0}
+    .hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.chip{background:#fff;border:1px solid #e2e6f2;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:750;color:#54637b}
+    .nav{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav-inner{max-width:1030px;margin:auto;display:flex;gap:9px;padding:10px 22px;overflow-x:auto;scrollbar-width:none}.nav-inner::-webkit-scrollbar{display:none}.nav a{text-decoration:none;white-space:nowrap;font-size:13px;font-weight:750;color:#59687d;border-radius:10px;padding:8px 12px}.nav a:hover{background:var(--purple-light);color:var(--purple)}
+    .section{margin-top:32px;scroll-margin-top:78px}.section-title{display:flex;align-items:center;gap:10px;margin-bottom:14px}.step{background:#eae6ff;color:#5945b4;border-radius:12px;padding:5px 11px;font-size:13px;font-weight:850}.section h2{font-size:22px;letter-spacing:-.035em;margin:0}.time{margin-left:auto;color:#738197;font-size:13px;font-weight:750}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:21px;padding:25px;box-shadow:var(--shadow)}.intro-card{background:linear-gradient(110deg,#fff,#fafaff)}.intro-card strong{color:#5547ac}.muted{color:var(--muted)}.small{font-size:13px}.hint{border-radius:13px;background:#f5f6fc;padding:12px 15px;font-size:13px;color:#63728a;margin-top:14px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}.field label{font-weight:750;font-size:14px}.field input,.field textarea,.field select{border:1px solid #dce2ed;border-radius:12px;background:#fff;color:var(--ink);padding:11px 13px;width:100%;font-size:14px;transition:border .15s}.field textarea{min-height:79px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#8f82e5}.field:last-child{margin-bottom:0}
+    .app-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:22px}.app-choice{border:1.5px solid #e3e6f0;background:#fff;border-radius:15px;padding:13px 8px;text-align:center;min-height:91px;display:flex;flex-direction:column;justify-content:center;gap:4px;color:#46546b}.app-choice span{font-size:23px}.app-choice strong{font-size:13px}.app-choice[aria-pressed="true"]{background:#f0edff;border-color:#8d7bdc;box-shadow:0 0 0 2px #e4deff;color:#5545b5}
+    .mission{padding:19px;border-radius:16px;background:#f3f0ff;border:1px solid #e5dfff;margin-top:15px}.mission-title{font-size:15px;font-weight:850;color:#5a4bad;margin-bottom:5px}.mission p{margin:0;font-size:14px}.mission-note{margin-top:8px!important;color:#70658f;font-size:12px!important}
+    .roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.role{border:1px solid #e8eaf3;border-radius:15px;padding:15px;background:#fff}.role strong{font-size:14px}.role p{font-size:12px;color:#69788e;margin:3px 0 11px}.role input{border:1px solid #dce2ed;border-radius:10px;padding:9px 10px;width:100%;font-size:13px}
+    .timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.timeline .item{padding:15px;border-radius:15px;background:#f3f6ff}.timeline .item:nth-child(2){background:#eaf8f3}.timeline .item:nth-child(3){background:#fff4eb}.timeline .item:nth-child(4){background:#fff0f5}.timeline .item b{display:block;font-size:18px}.timeline .item span{font-size:13px;color:#66758b}.timeline .item p{margin:6px 0 0;font-size:13px;font-weight:750}
+    .prompt{white-space:pre-wrap;overflow-wrap:anywhere;background:#27324b;color:#f6f7ff;border-radius:15px;padding:21px;font-size:13px;line-height:1.85;max-height:390px;overflow-y:auto;margin:15px 0}.actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.btn{border:0;background:var(--purple);color:#fff;border-radius:11px;padding:11px 17px;font-size:14px;font-weight:800}.btn:hover{filter:brightness(.96)}.btn.secondary{background:#f0edff;color:#5d50b6}.btn.light{background:#eff2f7;color:#4f5d73}.btn:disabled{opacity:.55;cursor:not-allowed}.status{font-size:13px;color:#4e7b67;min-height:20px}
+    .checklist{display:grid;gap:10px}.check{display:flex;align-items:flex-start;gap:12px;border:1px solid #e8ebf2;padding:12px 14px;border-radius:12px;cursor:pointer}.check input{accent-color:#6959c9;width:18px;height:18px;margin-top:3px;flex-shrink:0}.check span{font-size:14px}.check:has(input:checked){background:#f4f1ff;border-color:#ddd5ff}.progress-wrap{height:10px;background:#e9edf5;border-radius:999px;overflow:hidden;margin:15px 0 7px}.progress{height:100%;background:linear-gradient(90deg,#8b7be5,#77cbb3);width:0;transition:width .25s}.progress-label{font-size:13px;color:#6b778c}
+    .example-details{margin:10px 0;border:1px solid #e4e8f3;border-radius:13px;padding:12px 14px;background:#fcfcff}.example-details summary{font-size:14px;font-weight:800;cursor:pointer;color:#5145a3}.example-details .hint{margin-bottom:0}.callout{padding:15px 17px;background:var(--yellow);border:1px solid #f3e7ca;border-radius:13px;font-size:14px}.footer{margin-top:36px;text-align:center;font-size:12px;color:#8793a6}.print-only{display:none}
+    @media(max-width:700px){.top .shell{padding-top:38px;padding-bottom:35px}.shell{padding:0 15px 52px}.nav-inner{padding:8px 12px}.card{padding:19px}.grid,.roles{grid-template-columns:1fr}.app-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.section h2{font-size:19px}.time{font-size:12px}.section{margin-top:25px}}
+    @media print{body{background:#fff;font-size:11pt}.top{background:#fff}.top .shell{padding:8px 0 15px}.nav,.actions,.footer,.app-choices,.no-print{display:none!important}.shell{max-width:100%;padding:0 8px}.section{margin-top:15px;break-inside:avoid}.card{box-shadow:none;border:1px solid #bbb;padding:13px}.field input,.field textarea{border:1px solid #ccc}.prompt{background:#f5f5f5;color:#222;max-height:none;font-size:9pt}.print-only{display:block}.section-title{margin-bottom:8px}.roles{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:repeat(4,1fr)}.mission{background:#f8f8f8}h1{font-size:25pt}}
+  </style>
+</head>
+<body>
+<header class="top"><div class="shell">
+  <div class="eyebrow">✦ 고등학교 진로활동 · 모둠 프로젝트</div>
+  <h1>아이디어를 현실로!<br><em>AI 앱 제작 스튜디오</em></h1>
+  <p class="lead">우리가 기획하고 디자인한 앱을 AI와 함께 시제품으로 만들어 봅시다. 오늘의 목표는 완벽한 개발이 아니라, <strong>아이디어를 실제로 체험하고 개선하는 것</strong>입니다.</p>
+  <div class="hero-meta"><span class="chip">👥 4인 1모둠</span><span class="chip">💻 HTML 앱 시제품</span><span class="chip">🌱 진로·직무 체험</span></div>
+</div></header>
+<nav class="nav" aria-label="활동 단계"><div class="nav-inner"><a href="#start">① 오늘의 미션</a><a href="#roles">② 역할 분담</a><a href="#plan">③ 앱 정보</a><a href="#examples">예시 모음</a><a href="#prompt-section">④ AI 프롬프트</a><a href="#test">⑤ 테스트·개선</a><a href="#finish">⑥ 마무리</a></div></nav>
+<main class="shell">
+<section class="section" id="start"><div class="section-title"><span class="step">START</span><h2>오늘의 미션</h2></div><div class="card intro-card">
+  <p style="margin-top:0"><strong>“우리 모둠의 앱을 친구들이 직접 체험할 수 있도록 만들자!”</strong></p>
+  <div class="timeline"><div class="item"><b>01</b><span>STEP 1</span><p>역할·목표 정하기</p></div><div class="item"><b>02</b><span>STEP 2</span><p>프롬프트 만들기</p></div><div class="item"><b>03</b><span>STEP 3</span><p>AI로 구현·수정</p></div><div class="item"><b>04</b><span>STEP 4</span><p>테스트·정리</p></div></div>
+  <p class="small muted" style="margin-bottom:0">✔ 코드를 외우거나 직접 작성할 필요는 없습니다. AI에게 요구사항을 정확하게 설명하고, 결과를 검토하는 것이 중요합니다.</p>
+</div></section>
+<section class="section" id="roles"><div class="section-title"><span class="step">01</span><h2>우리 모둠, 오늘은 어떤 팀?</h2></div><div class="card">
+  <div class="field"><label for="team">모둠 이름</label><input id="team" type="text" placeholder="예: 1모둠 (이름 대신 모둠 번호 권장)" maxlength="60"></div>
+  <div class="roles">
+    <div class="role"><strong>🧭 서비스 기획자</strong><p>원래 설계한 목적과 기능이 잘 반영됐는지 확인</p><input id="role-plan" aria-label="서비스 기획자 이름" placeholder="담당 역할 별칭 (선택)"></div>
+    <div class="role"><strong>🎨 UX/UI 디자이너</strong><p>화면 구성과 사용 편의성을 확인</p><input id="role-design" aria-label="UX/UI 디자이너 이름" placeholder="담당 역할 별칭 (선택)"></div>
+    <div class="role"><strong>💬 AI 구현 담당자</strong><p>프롬프트를 입력하고 AI 결과를 수정 요청</p><input id="role-ai" aria-label="AI 구현 담당자 이름" placeholder="담당 역할 별칭 (선택)"></div>
+    <div class="role"><strong>🔎 품질 평가자</strong><p>직접 사용하며 오류와 개선점을 발견</p><input id="role-test" aria-label="품질 평가자 이름" placeholder="담당 역할 별칭 (선택)"></div>
+  </div><div class="hint">실명은 입력하지 말고 모둠 번호와 별칭을 사용하세요. 역할은 협력하기 위한 기준이에요. AI를 조작하는 사람 한 명만 활동하지 않도록 모둠원 모두 의견을 내 주세요.</div>
+</div></section>
+<section class="section" id="plan"><div class="section-title"><span class="step">02</span><h2>우리 앱 기획 다시 확인하기</h2></div><div class="card">
+  <p class="muted small" style="margin-top:0">지난 시간에 직접 작성한 <strong>기획서와 화면 설계도</strong>를 보며 우리 모둠의 내용을 자유롭게 적어 보세요. 정해진 답이나 기본 기능은 없어요.</p>
+  <div class="grid">
+    <div class="field"><label for="app-name">앱 이름</label><input id="app-name" placeholder="우리가 정한 앱 이름"></div>
+    <div class="field"><label for="audience">주요 사용자</label><input id="audience" placeholder="우리 앱을 주로 사용하는 사람은 누구일까요?"></div>
+  </div>
+  <div class="field"><label for="problem">이 앱으로 해결하고 싶은 문제</label><textarea id="problem" placeholder="우리 모둠이 해결하려는 문제를 적어 보세요."></textarea></div>
+  <div class="field"><label for="screens">필요한 화면 (기존 화면 설계 참고)</label><textarea id="screens" placeholder="우리 모둠이 설계한 화면을 적어 보세요."></textarea></div>
+  <div class="field"><label for="feature">오늘 반드시 구현하고 싶은 핵심 기능 한 가지</label><textarea id="feature" placeholder="핵심 기능 한 가지를 모둠이 정해 보세요."></textarea></div>
+  <div class="mission"><div class="mission-title">✏️ 우리 모둠이 직접 정하는 제작 목표</div><p>지난 시간의 설계를 다시 살펴보고 이번에 구현할 핵심 기능을 직접 선택하세요.</p><p class="mission-note">모든 기능을 완성할 필요는 없어요. 실제 연결이 어려운 기능은 시뮬레이션으로 표현해도 됩니다.</p></div>
+</div></section>
+<section class="section" id="examples"><div class="section-title"><span class="step">참고</span><h2>작성 예시 모아 보기</h2></div><div class="card">
+  <p class="small muted" style="margin-top:0">아래 내용은 <strong>작성 방법을 보여주기 위한 가상의 독서 기록 앱</strong> 예시입니다. 우리 모둠 앱의 실제 기획 내용이 아니며, 위 입력 칸에 자동 적용되지 않아요.</p>
+  <details class="example-details" open><summary>📝 앱 기획 작성 예시</summary><div class="hint"><strong>앱 이름:</strong> 한 장의 책장<br><strong>주요 사용자:</strong> 읽은 책을 간단히 기록하려는 사람<br><strong>해결할 문제:</strong> 읽은 책과 감상을 쉽게 정리하기 어렵다<br><strong>필요한 화면:</strong> 책 목록, 기록 작성, 기록 상세<br><strong>핵심 기능:</strong> 책 제목과 한 줄 감상을 입력하면 목록에 추가한다</div></details>
+  <details class="example-details"><summary>💬 AI에게 수정 요청하는 예시</summary><div class="hint">“기존의 독서 기록 화면은 유지하고, 기록을 추가하면 책 목록 상단에 바로 나타나도록 수정해 줘.”</div></details>
+  <details class="example-details"><summary>🔎 테스트 및 개선 기록 예시</summary><div class="hint"><strong>잘 구현한 점:</strong> 기록 추가 버튼을 누르면 새 독서 기록이 목록에 표시된다.<br><strong>개선할 점:</strong> 작은 화면에서 글씨가 잘 보이지 않으므로 버튼과 글씨 크기를 키우고 싶다.</div></details>
+  <details class="example-details"><summary>🌱 진로 성찰 작성 예시</summary><div class="hint">“UX/UI 디자인 활동이 흥미로웠다. 처음에는 화면을 예쁘게 꾸미는 것만 생각했지만, 사용자가 이해하기 쉬운 버튼 위치와 글씨 크기를 고민하는 일이 중요하다는 것을 알았다.”</div></details>
+</div></section>
+<section class="section" id="prompt-section"><div class="section-title"><span class="step">03</span><h2>AI에게 우리 앱 제작 요청하기</h2></div><div class="card">
+  <p style="margin-top:0;font-size:14px">위에 작성한 내용을 바탕으로 <strong>우리 모둠만의 프롬프트</strong>가 자동 완성됩니다. 아래 문장을 복사해 AI에게 전달해 보세요. 기존에 그린 화면 설계도 사진을 함께 첨부하면 더 좋아요.</p>
+  <div class="actions"><button class="btn" id="copy-prompt" type="button">📋 프롬프트 복사</button><span class="status" id="copy-status" role="status"></span></div>
+  <div class="prompt" id="prompt-output" aria-label="자동 생성된 AI 요청문"></div>
+  <div class="callout"><strong>💡 AI가 만든 코드를 어떻게 실행할까요?</strong><br>AI에게 <b>“완성된 코드를 index.html 파일 하나로 만들어 줘”</b>라고 요청하세요. 코드를 파일로 저장한 뒤 더블클릭하면 브라우저에서 열 수 있어요. 파일을 바로 제공하는 AI라면 HTML 파일을 내려받아 열어도 됩니다.</div>
+  <div class="hint">AI가 이상한 결과를 만들면 처음부터 다시 만들기보다 이렇게 말해 보세요. <strong>“기존 화면은 유지하고, [수정할 부분]만 [원하는 방식]으로 바꿔 줘.”</strong></div>
+</div></section>
+<section class="section" id="test"><div class="section-title"><span class="step">04</span><h2>직접 사용하고 점검하기</h2></div><div class="card">
+  <p class="small muted" style="margin-top:0">완성도보다 <strong>기획 의도와 사용 경험</strong>을 중심으로 확인해요.</p>
+  <div class="checklist">
+    <label class="check"><input type="checkbox" id="check1"><span>① 지난 시간에 설계한 화면이 시제품에 반영되어 있다.</span></label>
+    <label class="check"><input type="checkbox" id="check2"><span>② 버튼이나 입력창을 직접 조작할 수 있다.</span></label>
+    <label class="check"><input type="checkbox" id="check3"><span>③ 핵심 기능을 한 가지 이상 체험할 수 있다.</span></label>
+    <label class="check"><input type="checkbox" id="check4"><span>④ 앱의 목적과 주요 사용자가 분명하게 드러난다.</span></label>
+    <label class="check"><input type="checkbox" id="check5"><span>⑤ 불편한 점 또는 개선할 점을 한 가지 이상 발견했다.</span></label>
+  </div>
+  <div class="progress-wrap"><div class="progress" id="progress"></div></div><div class="progress-label" id="progress-label">완료 0 / 5개</div>
+  <div class="field" style="margin-top:19px"><label for="success">우리 모둠이 잘 구현한 부분</label><textarea id="success" placeholder="예: 버튼을 누르면 화면이 바뀌고, 선택한 내용이 표시된다."></textarea></div>
+  <div class="field"><label for="improve">아쉬운 점과 다음에 개선할 부분</label><textarea id="improve" placeholder="예: 글자가 작아서 읽기 어렵다. 화면을 더 단순하게 만들고 싶다."></textarea></div>
+</div></section>
+<section class="section" id="finish"><div class="section-title"><span class="step">FINISH</span><h2>오늘의 경험 돌아보기</h2></div><div class="card">
+  <div class="field"><label for="favorite-role">내가 가장 흥미를 느낀 직무 또는 활동은?</label><select id="favorite-role"><option value="">선택해 주세요</option><option>서비스 기획 · 문제 해결</option><option>UX/UI 디자인 · 화면 구성</option><option>AI 활용 · 앱 구현</option><option>품질 평가 · 사용자 테스트</option><option>아직 잘 모르겠다</option></select></div>
+  <div class="field"><label for="reflection">그렇게 생각한 이유 또는 오늘 새롭게 알게 된 점</label><textarea id="reflection" placeholder="예: 사용자가 어떤 버튼을 눌러야 할지 고민하면서 디자인이 단순히 예쁘게 만드는 일이 아니라는 것을 알았다."></textarea></div>
+  <div class="field"><label for="submission-code">제출 확인용 모둠 번호 (선택)</label><input id="submission-code" maxlength="30" placeholder="예: 1학년 3반 2모둠 — 실명은 적지 마세요"></div>
+  <div class="actions"><button class="btn" id="submit-sheet" type="button">☁ 교사에게 결과 제출</button><span class="status" id="submit-status" role="status"></span></div>
+  <div class="actions" style="margin-top:12px"><button class="btn" id="save-file" type="button">⬇ 활동 결과 저장 (.txt)</button><button class="btn secondary" id="print" type="button">🖨 인쇄 / PDF 저장</button><button class="btn light" id="reset" type="button">↺ 작성 내용 초기화</button></div>
+  <div class="hint">🔒 작성 내용은 현재 브라우저에 임시 저장됩니다. <strong>제출 버튼을 누르면</strong> 입력한 모둠 활동 내용이 교사가 관리하는 Google 스프레드시트로 전송될 수 있습니다(교사가 제출 주소를 설정한 경우). 실명·연락처·개인 상담 내용 등은 입력하지 마세요. 전송 후에는 교사의 시트에서 제출 여부를 확인해야 하며, TXT 파일도 따로 저장할 수 있습니다.</div>
+</div></section>
+<div class="footer">AI 앱 제작 스튜디오 · 진로활동 학습지 · HTML 단일 파일 / GitHub Pages 사용 가능</div>
+</main>
+<script>
+(function(){
+  'use strict';
+  const KEY='career_app_studio_v3';
+  const $=id=>document.getElementById(id);
+  const fields=['submission-code','team','role-plan','role-design','role-ai','role-test','app-name','audience','problem','screens','feature','success','improve','favorite-role','reflection'];
+  const checks=['check1','check2','check3','check4','check5'];
+  // 아래 URL에 교사가 배포한 Apps Script 웹 앱 /exec 주소를 붙여 넣으세요.
+  const SUBMIT_URL = '';
+  const value=id=>$(id).value.trim();
+  function promptText(){
+    const fallback=(id,def)=>value(id)||def;
+    return `우리는 고등학교 진로 수업에서 앱을 기획한 학생들입니다. 당신은 친절한 웹앱 개발 도우미입니다. 우리가 작성한 기획과 화면 설계를 바탕으로, 친구들이 직접 체험할 수 있는 앱 시제품을 만들어 주세요.\n\n[우리 모둠의 앱 기획]\n앱 이름: ${fallback('app-name','(앱 이름을 입력해 주세요)')}\n해결하려는 문제: ${fallback('problem','(해결하려는 문제를 입력해 주세요)')}\n주요 사용자: ${fallback('audience','(주요 사용자를 입력해 주세요)')}\n필요한 화면: ${fallback('screens','(필요한 화면을 입력해 주세요)')}\n오늘 반드시 구현할 핵심 기능: ${fallback('feature','(핵심 기능을 입력해 주세요)')}\n\n[제작 조건]\n1. HTML 파일 하나(index.html)로 실행되게 해 주세요. CSS와 JavaScript를 파일 안에 모두 포함해 주세요.\n2. 별도의 설치, 로그인, API 키, 외부 서버 없이 컴퓨터나 태블릿의 브라우저에서 체험할 수 있게 해 주세요.\n3. 화면 디자인은 깔끔하고 보기 편하게 만들어 주세요. 첨부한 화면 설계도가 있다면 최대한 반영해 주세요.\n4. 버튼과 입력창은 실제로 동작하게 해 주세요. 단, 서버나 외부 기기가 필요한 기능은 가상의 데이터로 시뮬레이션해 주세요.\n5. 개인정보나 실제 상담 내용 등 민감한 정보를 요구하거나 전송하지 않게 해 주세요.\n6. 오늘의 핵심 기능부터 우선 구현하고, 그 외 기능은 간단한 시제품 수준으로 만들어 주세요.\n7. 완성된 HTML 코드 전체를 제공하고, 파일로 저장해 실행하는 방법을 짧게 설명해 주세요.\n\n이제 위 조건에 맞는 앱 시제품을 만들어 주세요.`;
+  }
+  function updatePrompt(){$('prompt-output').textContent=promptText()}
+  function updateProgress(){const count=checks.filter(id=>$(id).checked).length;$('progress').style.width=(count*20)+'%';$('progress-label').textContent=`완료 ${count} / 5개`}
+  function store(){
+    try{const obj={values:{},checks:{}};fields.forEach(id=>obj.values[id]=$(id).value);checks.forEach(id=>obj.checks[id]=$(id).checked);localStorage.setItem(KEY,JSON.stringify(obj))}catch(e){}
+  }
+  function restore(){try{const obj=JSON.parse(localStorage.getItem(KEY)||'null');if(!obj)return;fields.forEach(id=>{if(typeof obj.values?.[id]==='string')$(id).value=obj.values[id]});checks.forEach(id=>$(id).checked===undefined?null:$(id).checked=Boolean(obj.checks?.[id]))}catch(e){}}
+  fields.forEach(id=>$(id).addEventListener('input',()=>{updatePrompt();store()}));
+  checks.forEach(id=>$(id).addEventListener('change',()=>{updateProgress();store()}));
+  $('copy-prompt').addEventListener('click',async()=>{
+    const t=promptText();const s=$('copy-status');
+    try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(t)}else{const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();if(!ok)throw Error('copy failed')}s.textContent='✓ 복사 완료! AI 채팅창에 붙여넣으세요.'}
+    catch(e){s.textContent='복사가 차단되었어요. 아래 프롬프트를 직접 선택해 복사해 주세요.'}
+  });
+  $('submit-sheet').addEventListener('click',async()=>{
+    const status=$('submit-status');
+    if(!SUBMIT_URL || !/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec(?:\?.*)?$/.test(SUBMIT_URL)){
+      status.textContent='교사가 제출 주소를 아직 설정하지 않았어요. TXT 저장을 이용하세요.';
+      return;
+    }
+    if(!value('team') || !value('app-name')){
+      status.textContent='모둠 이름과 앱 이름을 먼저 입력해 주세요.';
+      return;
+    }
+    if(!confirm('작성한 모둠 활동 내용을 교사에게 제출할까요? 실명이나 민감한 내용이 없는지 확인해 주세요.')) return;
+    const btn=$('submit-sheet');btn.disabled=true;status.textContent='전송 요청 중…';
+    const record={};fields.forEach(id=>record[id]=$(id).value.trim());
+    checks.forEach(id=>record[id]=$(id).checked?'완료':'미완료');
+    record.prompt=promptText();
+    try{
+      // Google Apps Script는 외부 사이트에서 읽기 가능한 CORS 응답을 제공하지 않아 no-cors 전송을 사용합니다.
+      // HTTP 성공 상태를 확인할 수 없으므로 교사용 시트에서 실제 접수 여부를 확인해야 합니다.
+      await fetch(SUBMIT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(record)});
+      status.textContent='전송 요청을 보냈어요. 접수 여부는 선생님의 시트에서 확인해 주세요.';
+    }catch(err){status.textContent='네트워크 오류로 전송하지 못했어요. TXT 저장을 이용하고 선생님께 알려 주세요.'}
+    finally{btn.disabled=false}
+  });
+  $('save-file').addEventListener('click',()=>{
+    const line=(label,id)=>`${label}: ${value(id)||'(미작성)'}`;
+    const text=`[AI 앱 제작 스튜디오 - 활동 결과]\n${line('모둠 이름','team')}\n${line('앱 이름','app-name')}\n\n[역할 분담]\n${line('서비스 기획자','role-plan')}\n${line('UX/UI 디자이너','role-design')}\n${line('AI 구현 담당자','role-ai')}\n${line('품질 평가자','role-test')}\n\n[앱 기획]\n${line('해결하려는 문제','problem')}\n${line('주요 사용자','audience')}\n${line('필요한 화면','screens')}\n${line('핵심 기능','feature')}\n\n[점검 결과]\n${checks.map((id,i)=>`${i+1}번: ${$(id).checked?'완료':'미완료'}`).join('\n')}\n${line('잘 구현한 부분','success')}\n${line('개선할 부분','improve')}\n\n[진로 성찰]\n${line('흥미를 느낀 직무','favorite-role')}\n${line('이유 및 새롭게 알게 된 점','reflection')}\n\n[AI 제작 프롬프트]\n${promptText()}\n`;
+    const blob=new Blob(['\uFEFF',text],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`AI앱활동지_${(value('team')||'우리모둠').replace(/[\\/:*?"<>|]/g,'_')}.txt`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  });
+  $('print').addEventListener('click',()=>window.print());
+  $('reset').addEventListener('click',()=>{if(!confirm('이 브라우저에 저장된 작성 내용을 모두 지울까요?'))return;fields.forEach(id=>$(id).value='');checks.forEach(id=>$(id).checked=false);try{localStorage.removeItem(KEY)}catch(e){}updatePrompt();updateProgress()});
+  restore();updatePrompt();updateProgress();
+})();
+</script>
+</body>
+</html>
